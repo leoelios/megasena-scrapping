@@ -1,0 +1,23 @@
+{
+  "name": "megasena_scrapping",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "repository": "https://github.com/leoelias023/megasena_scrapping.git",
+  "author": "Leonardo Elias <leoelias02@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^2.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "mongoose": "^5.9.7"
+  }
+}

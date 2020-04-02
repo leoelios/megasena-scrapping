@@ -13,9 +13,9 @@ This is a start and a little part of the system like a all.
 
 ## Libraries and Frameworks
 
-- PuppeteerJs
-- Axios
-- Cheerio
+- PuppeteerJs (Chrome automation)
+- Axios (GET and POST requests)
+- Cheerio (Manipulation of data returned of Axios and Puppeteer)
 
 ## ✍ Pre-requisites
 
