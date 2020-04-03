@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "mongoose": "^5.9.7"
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.9.7",
+    "puppeteer": "^2.1.1"
   }
 }

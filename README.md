@@ -31,7 +31,7 @@ This is a start and a little part of the system like a all.
    <br> `yarn`
 
 3. Set your [connection string](https://docs.mongodb.com/manual/reference/connection-string/#connection-string-formats) mongodb
-   <br>Config.js | In Line: 830<br>
+   <br>Inside of .env archive<br>
    Example: `mongodb://localhost:27017`
 
 4. Running Project
