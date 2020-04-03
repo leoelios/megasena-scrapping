@@ -1,5 +1,26 @@
 const Draw = require('./models/Draw');
 
+let x = 1;
+
+const show = async (numberTarget) => {
+  if (x <= 60) {
+    await Draw.countDocuments({
+      result: {
+        $all: [numberTarget],
+      },
+    })
+      .then(async (count) => {
+        console.log(count);
+        x = x + 1;
+        await show(x);
+      })
+      .catch((err) => {
+        console.log('error on count quantity numbers seted');
+        console.log(err);
+      });
+  }
+};
+
 module.exports = {
   save: async (competitionResult) => {
     Draw.create(competitionResult, async (errorSaveDraw, saved) => {
@@ -11,15 +32,7 @@ module.exports = {
       }
     });
   },
-  show: async () => {
-    Draw.count()
-      .then((count) => {
-        console.log(count);
-      })
-      .catch(() => {
-        console.log('error on count all data');
-      });
-  },
+  show,
   deleteAll: async () => {
     Draw.deleteMany()
       .then((deletedDraws) => {

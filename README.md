@@ -31,8 +31,18 @@ This is a start and a little part of the system like a all.
    <br> `yarn`
 
 3. Set your [connection string](https://docs.mongodb.com/manual/reference/connection-string/#connection-string-formats) mongodb
-   <br>Inside of .env archive<br>
+   <br>Create archive .env and inside set DB_USER, DB_PASSWORD<br>
    Example: `mongodb://localhost:27017`
 
 4. Running Project
    <br> `yarn start`
+
+## :bell: Ready functions
+
+### manipulation.deleteAll()
+
+Delete all informations in table Draw, reset all data for a possible restart
+
+### manipulation.show(Number number)
+
+Shows the count of all draws that have the number passed as an argument
