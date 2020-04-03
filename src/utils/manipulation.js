@@ -1,6 +1,7 @@
-const Draw = require('./models/Draw');
+const Draw = require('../models/Draw');
 
 let x = 1;
+let countedNumbers = [];
 
 const show = async (numberTarget) => {
   if (x <= 60) {
@@ -10,7 +11,7 @@ const show = async (numberTarget) => {
       },
     })
       .then(async (count) => {
-        console.log(count);
+        countedNumbers.push(count);
         x = x + 1;
         await show(x);
       })
@@ -19,6 +20,7 @@ const show = async (numberTarget) => {
         console.log(err);
       });
   }
+  return countedNumbers;
 };
 
 module.exports = {
@@ -33,6 +35,35 @@ module.exports = {
     });
   },
   show,
+  getMinorAndBigger: (countedNumbers) => {
+    x = 1;
+
+    let minor = countedNumbers[0];
+    let bigger = countedNumbers[0];
+    let positionMinor = 0;
+    let positionBigger = 0;
+
+    do {
+      if (countedNumbers[x] < minor) {
+        minor = countedNumbers[x];
+        positionMinor = x;
+      } else if (countedNumbers[x] > bigger) {
+        bigger = countedNumbers[x];
+        positionBigger = x;
+      }
+      x = x + 1;
+    } while (x < 60);
+    return {
+      minor: {
+        number: positionMinor,
+        currencly: minor,
+      },
+      bigger: {
+        number: positionBigger,
+        currencly: bigger,
+      },
+    };
+  },
   deleteAll: async () => {
     Draw.deleteMany()
       .then((deletedDraws) => {

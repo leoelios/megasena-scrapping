@@ -45,4 +45,8 @@ Delete all informations in table Draw, reset all data for a possible restart
 
 ### manipulation.show(Number number)
 
-Shows the count of all draws that have the number passed as an argument
+Return the count of all draws that have the number passed as an argument
+
+### manipulation.getMinorAndBigger(Array show())
+
+Return the bigger and minor currencly and the number

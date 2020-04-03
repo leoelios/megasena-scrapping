@@ -2,10 +2,12 @@
 require('./config/database');
 
 const { getData, getLastDraw } = require('./utils');
-const { show } = require('./manipulation');
+const { show, getMinorAndBigger } = require('./utils/manipulation');
 
 (async () => {
   // const LastDrawNumber = await getLastDraw();
   // await getData(LastDrawNumber);
-  // await show(1);
+  const countedNumbers = await show(1);
+  const minorAndBigger = getMinorAndBigger(countedNumbers);
+  console.log(minorAndBigger);
 })();

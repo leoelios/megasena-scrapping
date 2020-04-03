@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 const puppeteer = require('puppeteer');
 
-const { save } = require('./manipulation');
+const { save } = require('./utils/manipulation');
 
 const config = {
   headers: {
